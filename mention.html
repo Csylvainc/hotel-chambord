@@ -6,173 +6,413 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <title>Hotel Chambord</title>
 </head>
 
 <body>
-    <header class="contenaire-fluid">
-        <div class="row">
-            <div class="col-4 col-md-4 d-flex justify-start mt-2">
-                <figure>
-                    <img src="IMG/logo.svg" id="logo" alt="logo" class="col-4" />
-                    <figcaption>
-                        <h1 class="col-8">Hôtel Chambord</h1>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-8 col-md-8 row align-items-center justify-content-end">
-                <figure id="jeffrey" class="col-12 col-md-8 text-right text-md-right">
-                    <img src="img/majordhomme.svg" height="70px" alt="jeffrey" >
-                    <figcaption> Jeffrey à votre service</figcaption>
-                    <form action="" id="search" class="cache">
-                        <input type="search" name="" id="">
-                        <button type='submit' class="check"></button>
-                    </form>
-                </figure>    
-                <figure id="jarvis" class="col-12 col-md-2 text-right text-md-center">
-                        <img src="img/contact.svg" height="70px" alt="jarvis" >
-                        <figcaption> Contactez-nous</figcaption>
-                </figure>
-                <div class="col-12col-md-2">
-                    <img src="IMG/france.png" width="30px" alt="france">
-                    <img src="IMG/gb.png" width="30px" alt="gb">
+    <!-- bouton de partage -->
+    <div class="box">
+        <input type="checkbox" id="checkbox" />
+        <div class="menu">
+            <a href="#">
+                <div class="menuItems">
+                    <i class="fab fa-whatsapp"></i>
                 </div>
-            </div>
-    
+            </a>
+            <a href="#">
+                <div class="menuItems">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="menuItems">
+                    <i class="fab fa-facebook"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="menuItems">
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </a>
         </div>
-    </header>
-    <section class="row">
-        <aside class="col-12 col-md-2">
-            <nav class="navbar justify-content-center">
-                <div id="menuHome">
-                    <ul class="navbar-nav">
-                        <img src="/img/accueil.svg" alt="acceuil">
-                    </ul>
-                </div>
-                <div id="menuPrincipal" class="container-fluid mt-5">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="#" id="menuChambre" class="nav-link active">Chambres</a>
-                            <div class="container">
-                                <ul id="menuChambreElt" class="navbar-nav cache">
-                                    <li class="nav-item"><a href="#" class="nav-link">Confort</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Luxe</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Suite</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Classique</a></li>
+
+        
+    </div>
+    <!-- fin bouton partage -->
+
+    <div id="qfc">
+        <!-- bouton reserver -->
+        <div id="reservation">
+            <a href="/reservation.html"
+                style="padding: 8px 13px; font-family: 'Roboto Slab', sans-serif; font-size: 21px; font-weight: normal; text-decoration: none; text-align: center; display: table-cell; vertical-align: middle; border-radius: 25px; color: rgb(255, 255, 255); background-color: rgb(95, 34, 49);">Réserver</a>
+        </div>
+        <!-- fin bouton reserver -->
+        <div id="panier" class="mr-4">
+            <a href="/panier.html"><img src="img/panier.svg" style="width:50px;" alt="panier"></a>
+        </div>
+        <div id="flag" class="mr-2">
+            <img src="img/france.png" style="width:30px;" alt="france" id="fr"
+                onmouseover="this.style.cursor='pointer'">
+            <img src="img/gb.png" style="width:30px;" alt="gb" id="en" onmouseover="this.style.cursor='pointer'">
+        </div>
+        
+    </div>
+    
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Début du menu de navigation -->
+            <aside class="col-12 col-sm-4 col-lg-2" id="mainNav">
+                <nav class="navbar sticky-top">
+                    <figure class="nav-item">
+                        <a href="/index.html"><img src="img/logo.png" id="logo" alt="logo" /></a>
+                    </figure>              
+                    <div id="menuPrincipal" class="container-fluid mt-5">
+                        <ul class="navbar-nav justify-content-center">
+                            <li>
+                                <div id="menuHome">
+                                    <figure id="menuHomeElt">
+                                        <img src="/img/accueil.svg" alt="accueil">
+                                    </figure>
+                                    <span id="spanMenu">Menu</span>
+                                </div>                
+                            </li>
+                            <li class="nav-item">
+                                <a href="/index.html" id="menuAcceuil"
+                                    class="nav-link active cachem text-left">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuChambre" class="nav-link active cachem text-left">Chambres</a>
+                                <div class="container">
+                                    <ul id="menuChambreElt" class="navbar-nav cache">
+                                        <li class="nav-item"><a href="/chambres.html#classique"
+                                                class="nav-link sousMenu">Classique</a></li>
+                                        <li class="nav-item"><a href="/chambres.html#confort"
+                                                class="nav-link sousMenu">Confort</a></li>
+                                        <li class="nav-item"><a href="/chambres.html#luxe"
+                                                class="nav-link sousMenu">Luxe</a>
+                                        </li>
+                                        <li class="nav-item"><a href="/chambre.html#suite"
+                                                class="nav-link sousMenu">Suite</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuRestaurant" class="nav-link cachem">Restaurant</a>
+                                <div class="container">
+                                    <ul id="menuRestaurantElt" class="navbar-nav cache sousMenu">
+                                        <li class="nav-item"><a href="/restaurant.html"
+                                                class="nav-link sousMenu">Bar</a></li>
+                                        <li class="nav-item"><a href="/restaurant.html#brasserie"
+                                                class="nav-link sousMenu">Brasserie</a></li>
+                                        <li class="nav-item"><a href="/restaurant.html#degustation"
+                                                class="nav-link sousMenu">Dégustation</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuSpa" class="nav-link cachem justify-content-center">Spa</a>
+                                <div class="container">
+                                    <ul id="menuSpaElt" class="navbar-nav cache">
+                                        <li class="nav-item"><a href="/spa.html#decouverte"
+                                                class="nav-link sousMenu">Soin
+                                                Découverte</a></li>
+                                        <li class="nav-item"><a href="/spa.html#detente" class="nav-link sousMenu">Soin
+                                                Détente</a></li>
+                                        <li class="nav-item"><a href="/spa.html#relaxant" class="nav-link sousMenu">Soin
+                                                Relaxant</a></li>
+                                        <li class="nav-item"><a href="/spa.html#plaisir" class="nav-link sousMenu">Soin
+                                                Plaisir</a></li>
+                                        <li class="nav-item"><a href="/spa.html#evasion" class="nav-link sousMenu">Soin
+                                                Evasion</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuHotel" class="nav-link cachem">L'hôtel</a>
+                                <div class="container">
+                                    <ul id="menuHotelElt" class="navbar-nav cache .sousMenu">
+                                        <li class="nav-item"><a href="/hotel.html#apropos" class="nav-link sousMenu">a
+                                                Propos</a>
+                                        </li>
+                                        <li class="nav-item"><a href="/hotel.html#acces"
+                                                class="nav-link sousMenu">acces</a></li>
+                                        <li class="nav-item"><a href="/hotel.html#evenements"
+                                                class="nav-link sousMenu">evenements</a></li>
+                                        <li class="nav-item"><a href="/hotel.html#presse"
+                                                class="nav-link sousMenu">presse</a>
+                                        </li>
+                                        <li class="nav-item"><a href="/hotel.html#actualites"
+                                                class="nav-link sousMenu">actualites</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item text-center">
+                                <div class="cachem" id="jarvis">
+                                    <a href="/contact.html">
+                                        <figure >
+                                            <img src="img/contact.svg" style="height: 70px;" alt="jarvis">
+                                            <figcaption>Contactez-nous</figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                                
+                            </li>
+                            <li class="nav-item text-center">
+                                <div id="jeffrey" class="align-items-center nav-item cachem">
+                                    <img src="img/majordhomme.svg" style="height: 50px;" alt="jeffrey">
+                                    <form action="#" id="search">
+                                        <input type="search" name="cherche">
+                                        <button type='submit' class="check"></button>
+                                    </form>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+            <!-- Fin Menu de Navigation -->
+
+
+           
+            
+
+
+                
+                 <!-- Debut du contenu principal -->
+                <main class="col-12 col-sm-8 col-lg-10 justify-content-center text-center mt-5" id="mainContent">
+                    <h1 class="mb-4">Hôtel Chambord <span id="etoile"><sup>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</sup></span></h1>
+                    <div class="row justify-content-center">
+                        <article>
+                            <div class="et_pb_text_inner"><p class="p2"><span class="s1">Responsable de la publication: HOTEL CHAMBORD</span></p>
+                                <p class="p3"><span class="s2">Raison sociale de la société exploitante : HOTEL CHAMBORD<br/></span>1 avenue Montaigne<br/>75008<br/>Paris<br/><span class="s2">Numéro individuel d’identification de TVA :</span><span class="s1"><br/></span><span class="s2">Numéro de Siret :48064793200015</span><span class="s1"><br/></span><span class="s2">Capital Social: 8000€</span></p>
+                                <p class="p3"><span class="s2">INFORMATIQUE ET LIBERTÉ</span><span class="s1"><br/></span><span class="s2">Tout utilisateur ayant déposé des informations directement ou indirectement nominatives dispose d’un droit d’accès et de rectification conformément à la loi n° 7817 du 6/01/78 (Informatique et Liberté) auprès de l’administrateur du site.</span></p>
+                                <p class="p3"><span class="s2">Liens hypertextes</span><span class="s1"><br/></span><span class="s2">Les sites extérieurs à HOTEL CHAMBORD  ayant un lien hypertexte avec le présent site ne sont pas sous contrôle de HOTEL CHAMBORD , qui décline par conséquent toute responsabilité quant à leur contenu. L’utilisateur est seul responsable de leur utilisation.</span></p>
+                                <p class="p4"><span class="s1">RESPONSABILITE</span></p>
+                                <p class="p2"><span class="s1">En accédant à ce site, vous êtes informé que l’utilisation d’Internet nécessite le respect d’un ensemble de législations relatives notamment aux droits d’auteur et à la loi Informatique et Libertés.HOTEL CHAMBORD ne peut encourir de responsabilité du fait d’erreurs ou d’omissions, l’éditeur se réservant également le droit de modifier et d’actualiser à tout moment les données du site.</span></p>
+                                <p class="p4"><span class="s1">COPYRIGHT</span></p>
+                                <p class="p2"><span class="s1">En application du Code Français de la Propriété Intellectuelle, la reproduction pour un usage autre que privé, la vente, la diffusion, la publication, l’adaptation ou la communication, partielles ou intégrales, des données (présentation, agencement du site, photos, textes et illustrations protégés par le droit d’auteur) sont strictement soumises à l’autorisation écrite et préalable des détenteurs des droits, ci-dessus cités.</span></p>
+                                <p class="p4"><span class="s1">INFORMATIQUE ET LIBERTÉS</span></p>
+                                <p class="p2"><span class="s1">Tout utilisateur ayant déposé des informations directement ou indirectement nominatives dispose d’un droit d’accès et de rectification conformément à la loi n° 7817 du 6/01/78 (Informatique et Libertés) auprès de l’administrateur du site.</span></p>
+                                <p class="p4"><span class="s1">PROTECTION DES DONNEES PERSONNELLES</span></p>
+                                <p class="p5"><span class="s1">Identité du responsable du traitement</span></p>
+                                <p class="p3"><span class="s2">Le Site est édité par la société exploitante dont les coordonnées sont ci-dessus.</span><span class="s1"><br/></span><span class="s2">L’accès au site internet ainsi que l’utilisation de son contenu s’effectuent dans le cadre des mentions d’utilisation décrites ci-après.</span></p>
+                                <p class="p5"><span class="s1">Nature des données personnelles</span></p>
+                                <p class="p2"><span class="s1">Il est entendu par « donnée personnelle » toute information personnelle que vous êtes susceptible de partager à la société exploitante et qui peut permettre à cette dernière, directement ou indirectement, de vous identifier en tant que personne physique, par exemple lors d’une visite de site internet, d’une demande d’information, d’une réservation de chambre et autres prestations.</span></p>
+                                <p class="p5"><span class="s1">Les données personnelles collectées</span></p>
+                                <p class="p2"><span class="s1">Il peut vous être demandé de communiquer vos données personnelles lorsque vous naviguez sur le site web de la société exploitante.</span></p>
+                                <p class="p2"><span class="s1">Le caractère obligatoire ou facultatif des informations demandées vous est signalé lors de la collecte par un astérisque « * ». Les informations demandées signalées par un astérisque sont obligatoires car indispensables au traitement de vos différentes demandes. Les autres informations sont destinées à mieux vous connaître, à améliorer les services qui vous sont proposés. Elles sont, par conséquent, facultatives.</span></p>
+                                <p class="p2"><span class="s1">La société exploitante collecte et traite notamment vos nom, prénom, adresse email, adresse de facturation, numéro de téléphone, adresse IP, données de connexions et données de navigation, vos préférences et centres d’intérêts (chambre non-fumeur, chambre préférée, type de séjour…), vos avis en ligne.</span></p>
+                                <p class="p5"><span class="s1">Quand vos données personnelles sont-elles collectées ?</span></p>
+                                <ul class="ul1">
+                                <li class="li6"><span class="s2">Vous naviguez sur le site internet (adresse IP et Cookies) et consultez des produits ou services ;</span></li>
+                                <li class="li6"><span class="s2">Vous faites part à la société exploitante de vos observations/commentaires dans certaines rubriques, via questionnaires ou formulaires de contact, page officielle des réseaux sociaux de la société exploitante ;</span></li>
+                                <li class="li6"><span class="s2">Vous envoyez à la société exploitante un message électronique ;</span></li>
+                                <li class="li6"><span class="s2">Vous vous inscrivez à la liste de diffusion de la newsletter ;</span></li>
+                                <li class="li6"><span class="s2">Vous partagez une page ou une offre par envoi d’un email ou par l’intermédiaire d’un réseau social ;</span></li>
+                                <li class="li6"><span class="s2">Vous répondez à un questionnaire de satisfaction ;</span></li>
+                                <li class="li6"><span class="s2">Vous effectuez une demande de devis.</span></li>
                                 </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" id="menuRestaurant" class="nav-link">Restaurant</a>
-                            <div class="container">
-                                <ul id="menuRestaurantElt" class="navbar-nav cache">
-                                    <li class="nav-item"><a href="#" class="nav-link">Bar</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Brasserie</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Dégustation</a></li>
+                                <p class="p5"><span class="s1">Le stockage des données</span></p>
+                                <p class="p2"><span class="s1">Les informations récoltées sont stockées dans nos différents systèmes de réservation sur des bases de données sécurisées et certifiées SSL.</span></p>
+                                <p class="p2"><span class="s1">Cette base de données comprend : le nom des clients, leur adresse, leurs numéros de téléphone, leur poste, le nom de leur entreprise et les données de leur carte de crédit. Nous pouvons également enregistrer d’autres informations telles que vos préférences concernant la chambre, les repas, les boissons et d’autres services ainsi que votre historique de séjour au sein de notre établissement.</span></p>
+                                <p class="p5"><span class="s1">Finalité de la collecte de données par la société exploitante</span></p>
+                                <p class="p2"><span class="s1">Au travers du site internet, la société exploitante collecte les données vous concernant qui sont strictement nécessaires aux finalités suivantes :</span></p>
+                                <ol class="ol1">
+                                <li class="li6"><span class="s2">Afin de gérer vos demandes d’informations et de réservations, ainsi que tout programme de fidélité ;</span></li>
+                                <li class="li6"><span class="s2">Pour améliorer et personnaliser les services de la société exploitante afin de faciliter votre navigation sur le site web ;</span></li>
+                                <li class="li6"><span class="s2">Pour gérer et suivre l’ensemble de la relation client ;</span></li>
+                                <li class="li6"><span class="s2">Gérer l’inscription aux actualités et offres promotionnelles de la société exploitante (newsletter) ;</span></li>
+                                <li class="li6"><span class="s2">Pour gérer toutes vos demandes d’accès selon la législation en vigueur ;</span></li>
+                                <li class="li6"><span class="s2">Gérer des impayés et du contentieux ;</span></li>
+                                <li class="li6"><span class="s2">Gérer des demandes de candidatures dans le cadre des offres d’emploi de la société exploitante qui ont retenu votre attention, ou toute demande de candidature spontanée ;</span></li>
+                                <li class="li6"><span class="s2">La mesure de la qualité et de la satisfaction.</span></li>
+                                </ol>
+                                <p class="p2"><span class="s1">En l’absence de réponse aux informations obligatoires, votre demande ne pourra être prise en compte.</span></p>
+                                <p class="p4"><span class="s1">Engagements de la société exploitante en matière de protection des données personnelles</span></p>
+                                <p class="p5"><span class="s1">Transparence et finalité :</span></p>
+                                <p class="p2"><span class="s1">Aucune donnée personnelle n’est ou ne sera collectée à votre insu. La nature facultative ou obligatoire des mentions à communiquer à la société exploitante dans le cadre de la collecte effectuée sur le site internet vous sera préalablement indiquée, via la présence du symbole « * » astérisque. La société exploitante collecte et traite vos données personnelles uniquement aux fins décrites dans les présentes Mentions Légales.</span></p>
+                                <p class="p5"><span class="s1">Proportionnalité et pertinence :</span></p>
+                                <p class="p2"><span class="s1">La société exploitante ne collecte et ne traite que les données personnelles nécessaires au bon traitement de votre demande ou à la personnalisation des services qui vous sont proposés.</span></p>
+                                <p class="p5"><span class="s1">Temps de stockage des données :</span></p>
+                                <p class="p2"><span class="s1">La société exploitante ne conserve vos données personnelles que pendant la période nécessaire à leur traitement conformément à ce qui est prévu par la loi applicable.</span></p>
+                                <p class="p5"><span class="s1">Sécurité et confidentialité :</span></p>
+                                <p class="p2"><span class="s1">La société exploitante s’engage à prendre les mesures nécessaires pour garantir la confidentialité des données et de ne pas divulguer à des tiers non autorisés.</span></p>
+                                <p class="p2"><span class="s1">Nous pouvons être amenés à transmettre vos informations personnelles aux autorités locales, si cela est exigé par la loi ou dans le cadre d’une enquête et conformément à la réglementation locale.</span></p>
+                                <p class="p2"><span class="s1">Comme la plupart des sites internet, certaines informations sont automatiquement enregistrées via un protocole. Ces informations incluent les adresses de protocole (adresse IP), type de navigateur utilisé, le fournisseur de service internet, les pages de référence et pages finales, le système d’exploitation, la date, le temps et les données Clickstream.</span></p>
+                                <p class="p2"><span class="s1">Les cookies n’enregistrent pas les informations fournies par les utilisateurs au cours d’une réservation en ligne ou lors de l’enregistrement d’un compte client. Les cookies identifient votre navigateur plutôt que vous-même et ne peuvent suffire par eux-mêmes à révéler votre identité.</span></p>
+                                <p class="p5"><span class="s1">Respect de vos droits :</span></p>
+                                <p class="p2"><span class="s1">Vous êtes informé de vos droits d’interrogation, d’accès, de rectification et d’opposition pour motifs légitimes ainsi que de votre droit d’opposition à la prospection commerciale conformément aux dispositions de la loi n°78-17 du 6 janvier 1978.</span></p>
+                                <p class="p5"><span class="s1">Droits d’accès, rectification et opposition :</span></p>
+                                <p class="p3"><span class="s2">Conformément à la loi n° 78-17 du 6 janvier 1978, relative à l’Informatique, aux Fichiers et aux Libertés, vous bénéficiez, sur simple demande écrite, d’un droit d’accès et de rectification sur les informations vous concernant.</span><span class="s1"><br/></span><span class="s2">Vous pouvez également, pour des motifs légitimes, vous opposer au traitement des données vous concernant.</span></p>
+                                <p class="p2"><span class="s1">Pour exercer l’un de ces droits et obtenir communication des informations vous concernant, il suffit de vous adresser à la société exploitante dont les coordonnées sont accessibles en début de ces Mentions Légales.</span></p>
+                                <p class="p4"><span class="s1">COOKIES</span></p>
+                                <p class="p2"><span class="s1">Lors de la consultation du site internet, certaines informations relatives à la navigation de votre terminal sont susceptibles d’être enregistrées dans des fichiers appelés « Cookies » installés sur votre terminal, sous réserve des choix que vous auriez exprimés concernant les cookies et que vous pouvez modifier à tout moment.</span></p>
+                                <p class="p2"><span class="s1">Un cookie est un petit fichier texte enregistré dans un espace dédié du disque dur de votre terminal, à l’occasion de la consultation d’un service en ligne grâce à votre logiciel de navigation. Il permet à son émetteur d’identifier le terminal dans lequel il est enregistré, pendant la durée de validité ou d’enregistrement du cookie.</span></p>
+                                <p class="p2"><span class="s1">Les cookies que la société exploitante émet sont utilisés aux fins décrites ci-après, pendant la durée de validité du cookie concerné, sous réserve de vos choix qui résultent des paramètres de votre logiciel de navigation utilisé lors de votre visite du site internet et dont vous pouvez modifier le paramétrage à tout moment.</span></p>
+                                <p class="p2"><span class="s1">Des cookies de sociétés partenaires (cookies tiers) sont susceptibles d’être placés dans votre ordinateur via les pages du site internet</span></p>
+                                <p class="p2"><span class="s1">Seul l’émetteur d’un cookie est susceptible de lire ou de modifier des informations qui y sont contenues.</span></p>
+                                <p class="p2"><span class="s1">Différents types de cookies sont utilisés sur le site internet, ils ont des finalités différentes. Certains sont nécessaires à votre utilisation du site internet.</span></p>
+                                <p class="p5"><span class="s1">Les cookies analytiques</span></p>
+                                <p class="p2"><span class="s1">Il s’agit des cookies qui permettent à la société exploitante :</span></p>
+                                <ul class="ul1">
+                                <li class="li6"><span class="s2">de générer des statistiques et des différents éléments composant le site web (rubriques et contenus visités, parcours) afin d’améliorer l’expérience de navigation proposée ;</span></li>
+                                <li class="li6"><span class="s2">de comptabiliser le nombre total de publicités affichées par ses soins sur ses espaces publicitaires, d’identifier ces publicités, leur nombre d’affichages, le nombre de clics et informations de navigation.</span></li>
                                 </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" id="menuSpa" class="nav-link">Spa</a>
-                            <div class="container">
-                                <ul id="menuSpaElt" class="navbar-nav cache">
-                                    <li class="nav-item"><a href="#" class="nav-link">Soin Découverte</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Soin Détente</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Soin Relaxant</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Soin Plaisir</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Soin Evasion</a></li>
+                                <p class="p2"><span class="s5">Exemple de cookies analytiques</span></p>
+                                <ul class="ul1">
+                                <li class="li6"><span class="s2">_ga     Analytics : enregistrement des données de navigation</span></li>
+                                <li class="li6"><span class="s2">__utm Analytics : enregistrement des données de navigation</span></li>
+                                <li class="li6"><span class="s2">_gac   Campaign : enregistrement des données de navigation des campagnes publicitaires</span></li>
                                 </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" id="menuHotel" class="nav-link">Nous</a>
-                            <div class="container">
-                                <ul id="menuHotelElt" class="navbar-nav cache">
-                                    <li class="nav-item"><a href="#" class="nav-link">aPropos</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">acces</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">evenements</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">presse</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">actualites</a></li>
+                                <p class="p5"><span class="s1">Les cookies et plug-in de réseaux sociaux (boutons sociaux)</span></p>
+                                <p class="p2"><span class="s1">La société exploitante est susceptible d’inclure sur le site web des outils de partage de contenus avec d’autres personnes ou de faire connaître à ces autres personnes votre consultation ou votre opinion concernant un contenu de notre site. Tel est notamment le cas de boutons « Partager », « J’aime » issus de réseaux sociaux tels que Facebook, Twitter, etc.</span></p>
+                                <p class="p2"><span class="s1">La société exploitante n’a aucun contrôle sur le processus employé par les réseaux sociaux dans la collecte d’informations.</span></p>
+                                <ul class="ul1">
+                                <li class="li6"><span class="s2">Facebook Connect : connexion en utilisant son compte Facebook</span></li>
+                                <li class="li6"><span class="s2">Facebook Social Graph : partage de la page sur Facebook</span></li>
+                                <li class="li6"><span class="s2">Pinterest : partage de la page sur Pinterest</span></li>
+                                <li class="li6"><span class="s2">Linkedin : partage de la page sur Linkedin</span></li>
+                                <li class="li6"><span class="s2">Instagram : partage de la page sur Instagram</span></li>
                                 </ul>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
-        </aside>
-        <main class="col-12 col-md-10">
-            <section></section>
-        </main>
-    </section>
+                                <p class="p5"><span class="s1">Les cookies et identifiants machine aux fins de sécurisation des transactions</span></p>
+                                <p class="p2"><span class="s1">Nous vous informons que lors de votre commande, la société exploitante, ou ses prestataires agissant pour son compte, peut déposer des cookies ou collecter des informations relatives à votre terminal notamment les informations (attributs techniques de sécurité) nécessaires à la reconnaissance des équipements (ordinateur, tablette ou téléphone portable) afin de permettre l’identification de votre équipement aux fins de sécurisation des transactions dans votre intérêt.</span></p>
+                                <p class="p5"><span class="s1">Les cookies publicitaires</span></p>
+                                <p class="p2"><span class="s1">Les contenus publicitaires (graphisme, animations, vidéos etc.) diffusés dans les espaces publicitaires de la société exploitante sont susceptibles de contenir des cookies émis par des tiers qui peuvent permettre, pendant la durée de validité des cookies, de comptabiliser les clics, mais aussi de vous proposer les publicités les plus adaptées suivant votre comportement de navigation, centres d’intérêts et préférences.</span></p>
+                                <p class="p2"><span class="s1">Le refus des cookies publicitaires n’a pas d’impact sur l’utilisation du site et n’entraînera pas l’arrêt de la publicité sur le site ou sur internet. Cela aura seulement pour effet d’afficher une publicité qui ne tiendra pas compte de vos centres d’intérêt ou de vos préférences.</span></p>
+                                <p class="p2"><span class="s1">Ces cookies dépendent principalement des régies publicitaires. Nous ne pouvons pas les lister de manière exhaustive :</span></p>
+                                <ul class="ul1">
+                                <li class="li6"><span class="s2">AdWords : achat de mots-clés sponsorisés affichés sur Google</span></li>
+                                <li class="li6"><span class="s2">Facebook Custom Audience</span></li>
+                                <li class="li6"><span class="s2">publicité ciblée : enregistrement du parcours de navigation</span></li>
+                                </ul>
+                                <p class="p5"><span class="s1">Ciblage publicitaire</span></p>
+                                <p class="p2"><span class="s1">Le site est susceptible de contenir des cookies émis par des tiers (agences et outils publicitaires) et de permettre à ces derniers, pendant la durée de validité de ce cookie de récolter des données de navigation relatives aux appareils se connectant sur nos sites, mais aussi de vous proposer des contenus publicitaires susceptibles de correspondre à votre précédente navigation sur le site.</span></p>
+                                <p class="p2"><span class="s1">En aucun cas cette collecte de ces données permet à ces prestataires de vous identifier personnellement. Vos nom, prénom, nom d’utilisateur, adresse postale, adresse électronique et mot de passe ne sont en aucun cas communiqués à des tiers sans votre consentement préalable et explicite.</span></p>
+                                <p class="p5"><span class="s1">Vos choix concernant les cookies</span></p>
+                                <p class="p2"><span class="s1">Plusieurs possibilités vous sont offertes pour gérer les cookies. Tout paramétrage que vous pouvez entreprendre sera susceptible de modifier votre navigation sur internet et vos conditions d’accès à certains services nécessitant l’utilisation de cookies.</span></p>
+                                <p class="p5"><span class="s1">Les choix qui vous sont offerts par votre logiciel de navigation</span></p>
+                                <p class="p2"><span class="s1">Vous pouvez personnaliser votre navigateur internet (Google Chrome, Internet Explorer, Mozilla Firefox etc…) de manière à ce que des cookies soient enregistrés dans votre terminal ou au contraire qu’ils soient refusés.</span></p>
+                                <p class="p5"><span class="s1">Le refus des cookies</span></p>
+                                <p class="p2"><span class="s1">Si vous refusez l’enregistrement de cookies, certaines fonctionnalités, comme l’identification / connexion à votre espace personnel, la personnalisation de votre navigation (choix de la langue favorite par exemple) ne seront plus disponibles.</span></p>
+                                <p class="p2"><span class="s1">La société exploitante décline toute responsabilité pour les conséquences liées au fonctionnement dégradé de ses services et fonctionnalités dues au refus du cookie.</span></p>
+                                <p class="p5"><span class="s1">Comment exercer vos choix, selon le navigateur que vous utilisez ?</span></p>
+                                <p class="p2"><span class="s1">Pour la gestion des cookies et de vos choix, la configuration de chaque navigateur est différente. Elle est décrite dans le menu d’aide de votre navigateur qui vous permettra de savoir de quelle manière modifier vos souhaits en matière de cookies.</span></p>
+                                <p class="p2"><span class="s5">Pour Internet Explorer™ :</span></p>
+                                <p class="p7"><span class="s2"><a href="https://support.microsoft.com/fr-fr/help/17442/windows-internet-explorer-delete-manage-cookies"><i>https://support.microsoft.com/fr-fr/help/17442/windows-internet-explorer-delete-manage-cookies</i></a></span><span class="s6"><br/></span><span class="s7">ou</span></p>
+                                <p class="p2"><span class="s1">Dans Internet Explorer, cliquez sur le bouton Outils, puis sur Options Internet. Sous l’onglet Général, sous Historique de navigation, cliquez sur Paramètres. Cliquez sur le bouton Afficher les fichiers. Cliquez sur l’en-tête de colonne Nom pour trier tous les fichiers dans l’ordre alphabétique, puis parcourez la liste jusqu’à ce que vous voyiez des fichiers commençant par le préfixe « Cookie » (tous les cookies possèdent ce préfixe et contiennent habituellement le nom du site web qui a créé le cookie). Sélectionnez le ou les cookies comprenant le nom de la société exploitante et supprimez-les. Fermez la fenêtre qui contient la liste des fichiers, puis cliquez deux fois sur OK pour retourner dans Internet Explorer.</span></p>
+                                <p class="p2"><span class="s5">Pour Safari™ :</span></p>
+                                <p class="p3"><span class="s8"><a href="https://support.apple.com/?path=Safari/3.0/fr/9277.html"><i>https://support.apple.com/?path=Safari/3.0/fr/9277.html</i></a></span><span class="s1"><br/></span><span class="s2">Ou</span><span class="s1"><br/></span><span class="s2">Dans votre navigateur, choisissez le menu Édition &gt; Préférences. Cliquez sur Sécurité. Cliquez sur Afficher les cookies. Sélectionnez les cookies qui contiennent le nom de la société exploitante et cliquez sur Effacer ou sur Tout effacer. Après avoir supprimé les cookies, cliquez sur Terminé.</span></p>
+                                <p class="p2"><span class="s5">Pour Chrome™ :</span></p>
+                                <p class="p3"><span class="s8"><a href="https://support.google.com/chrome/answer/95647?hl=fr&amp;hlrm=en"><i>https://support.google.com/chrome/answer/95647?hl=fr&amp;hlrm=en</i></a></span><span class="s1"><br/></span><span class="s2">Ou</span><span class="s1"><br/></span><span class="s2">Ouvrez Google Chrome. Dans la barre d’outils du navigateur, cliquez sur Plus. Placez votre curseur sur Plus d’outils, puis cliquez sur Effacer les données de navigation. Dans la fenêtre « Effacer les données de navigation », cochez les cases Cookies et données d’autres sites ou plug-in et Images et fichiers en cache. Utilisez le menu en haut pour sélectionner la quantité de données que vous souhaitez supprimer. Sélectionnez Depuis le début pour tout supprimer. Cliquez sur Effacer les données de navigation.</span></p>
+                                <p class="p2"><span class="s5">Pour Firefox™ :</span></p>
+                                <p class="p3"><span class="s8"><a href="https://support.mozilla.org/fr/kb/activer-desactiver-cookies-preferences"><i>https://support.mozilla.org/fr/kb/activer-desactiver-cookies-preferences</i></a></span><span class="s1"><br/></span><span class="s2">Ou</span><span class="s1"><br/></span><span class="s2">Allez dans l’onglet « Outils » du navigateur puis sélectionnez le menu « Options ». Dans la fenêtre qui s’affiche, choisissez « Vie privée » et cliquez sur « supprimer des cookies spécifiques ». Repérez les fichiers qui contiennent le nom de la société exploitante. Sélectionnez les et supprimez les.</span></p>
+                                <p class="p5"><span class="s1">Pour plus d’information sur les cookies</span></p>
+                                <p class="p2"><span class="s1">La société exploitante vous invite à consulter le site de la CNIL à l’adresse suivante : <a href="https://www.cnil.fr/fr/cookies-les-outils-pour-les-maitriser"><span class="s9"><i>https://www.cnil.fr/fr/cookies-les-outils-pour-les-maitriser</i></span></a></span></p>
+                                <p class="p5"><span class="s1">Saisie du Médiateur de la consommation</span></p>
+                                <p class="p3"><span class="s2">Conformément aux Articles L. 616-1 et R. 111-1 6° du Code de la consommation, le client est en droit de saisir le Médiateur du Tourisme et du Voyage, dont les coordonnées sont actuellement les suivantes :</span><span class="s1"><br/></span><span class="s2">Médiateur Tourisme Voyage,</span><span class="s1"><br/></span><span class="s2">MTV Médiation Tourisme Voyage</span><span class="s1"><br/></span><span class="s2">BP 80 303</span><span class="s1"><br/></span><span class="s2">75823 Paris Cedex 17</span></p>
+                                <p class="p3"><span class="s2">Conception du site</span><span class="s1"><br/><a href="https://hotel-webdesign.com/"><span class="s9">HOTEL WEB DESIGN</span></a><br/></span><span class="s2">128, rue de la boétie</span><span class="s1"><br/></span><span class="s2">75008 PARIS</span></p>
+                                <p class="p8"><span class="s2">Hebergeur:</span><span class="s1"><br/></span><span class="s2">OVH – 2 rue Kellermann BP 80157</span><span class="s1"><br/></span><span class="s2">59100 Roubaix</span><span class="s1"><br/></span><span class="s2">Telephone: 1007</span></p></div>
+                        </article>
+                    </div>
+                </main>
+                <!-- Fin du contenu principal -->
+            
+    </div>
     <hr>
-    <footer id="foot" class="container">
+    <!-- Début pied de page -->
+    <footer id="foot" class="container-fluid">
+        <!-- Récapitulatif -->
         <div class="row">
             <div id="footChambre" class="col-12 col-md-3 text-center">
                 <h6 class="text-center">Chambres</h6>
-                <a href="#">Classique</a><span> | </span>
-                <a href="#">Confort</a><span> | </span>
-                <a href="#">Luxe</a><span> | </span>
-                <a href="#">Suites</a><span> | </span>
+                <a href="/chambres.html#classique">Classique</a><span> | </span>
+                <a href="/chambres.html#confort">Confort</a><span> | </span>
+                <a href="/chambres.html#luxe">Luxe</a><span> | </span>
+                <a href="/chambres.html#suite">Suites</a><span> | </span>
             </div>
-
             <div id="footRestaurant" class="col-12 col-md-3 text-center">
                 <h6 class="text-center">Restaurant</h6>
-                <a href="#">Bar</a><span> | </span>
-                <a href="#">Brasserie</a><span> | </span>
-                <a href="#">Dégustation</a><span> | </span>
-
+                <a href="/restaurant.html#bar">Bar</a><span> | </span>
+                <a href="/restaurant.html#brasserie">Brasserie</a><span> | </span>
+                <a href="/restaurant.html#degustation">Dégustation</a><span> | </span>
             </div>
             <div id="footSpa" class="col-12 col-md-3 text-center">
                 <h6 class="text-center">Spa</h6>
-                <a href="#">Soin Détente</a><span> | </span>
-                <a href="#">Soin Relaxant</a><span> | </span>
-                <a href="#">Soin Plaisir</a><span> | </span>
-                <a href="#">Soin Evasion</a><span> | </span>
-
+                <a href="/spa.html#detente">Soin Détente</a><span> | </span>
+                <a href="/spa.html#decouverte">Soin Découverte</a><span> | </span>
+                <a href="/spa.html#relaxant">Soin Relaxant</a><span> | </span>
+                <a href="/spa.html#plaisir">Soin Plaisir</a><span> | </span>
+                <a href="/spa.html#evasion">Soin Evasion</a><span> | </span>
             </div>
             <div id="footHotel" class="col-12 col-md-3 text-center">
                 <h6 class="text-center">Hôtel</h6>
-                <a href="#">A Propos</a><span> | </span>
-                <a href="#">Acces</a><span> | </span>
-                <a href="#">Evenements</a><span> | </span>
-                <a href="#">Presse</a><span> | </span>
-                <a href="#">Actualités</a><span> | </span>
-
+                <a href="/hotel.html#apropos">A Propos</a><span> | </span>
+                <a href="/hotel.html#acces">Acces</a><span> | </span>
+                <a href="/hotel.html#evenements">Evenements</a><span> | </span>
+                <a href="/hotel.html#presse">Presse</a><span> | </span>
+                <a href="/hotel.html#actualites">Actualités</a><span> | </span>
             </div>
         </div>
-
-
+        <!-- Fin Récapitulatif -->
         <hr />
+        <!-- Début lien divers CVG...NewsLetter... -->
         <div id="liensDivers" class="row">
             <div id="recrutement" class="col-6 col-md text-center">
-                <a href="#">Recrutement</a>
+                <a href="/recrutement.html">Recrutement</a>
             </div>
 
             <div class="col-6 col-md text-center">
-                <a href="#"> Mention Legales</a>
+                <a href="/mention.html"> Mention Legales</a>
             </div>
 
             <div class="col-6 col-md text-center">
-                <a href="#"> CGV </a>
+                <a href="/cvg.html"> CGV </a>
+            </div>
+            <!-- Modal NewsLetter -->
+            <div class="col-6 col-md text-center">
+                <a href="#" data-toggle="modal" data-target="#staticBackdrop"> Inscription
+                    Newsletter </a>
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Inscription à notre Newsletter</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#">
+                                    <label for="emailId">Votre Email</label>
+                                    <input type="email" name="mail" id="emailId">
+                                    <button type="submit" class="btn btn-secondary">Inscription</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <p>Vous pourrez vous déinscrire à tout moment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Modal NewsLetter -->
+            <div class="col-6 col-md text-center">
+                <a href="#" OnClick="javascript:window.print()"> Imprimer </a>
             </div>
 
             <div class="col-6 col-md text-center">
-                <a href="#"> Newsletter </a>
+                <a href="/planDuSite.html"> Plan du Site </a>
             </div>
-
-            <div class="col-6 col-md text-center">
-                <a href="#"> Imprimer </a>
-            </div>
-
-            <div class="col-6 col-md text-center">
-                <a href="#"> Plan du Site </a>
-            </div>
-
         </div>
-
+        <!-- fin lien divers CVG...NewsLetter... -->
     </footer>
+    <!-- Fin pied de page -->
 
 
 
@@ -181,8 +421,17 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
     <script src="/js/script.js"></script>
     <script src="https://kit.fontawesome.com/7941ba6713.js" crossorigin="anonymous"></script>
+    <script>
+        // -------------Modal Newletter sur page d'accueil à l'ouverture plus 10 secondes----------------//
+        $(function () {
+            setTimeout(function () {
+                $('#staticBackdrop').modal('show');
+            }, 50000);
+        });
+    </script>
 </body>
 
 </html>

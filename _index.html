@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <title>Hotel Chambord</title>
+</head>
+
+<body>
+    <header class="sticky-top bgInfo">
+        <div class="d-flex">
+            <figure>
+                <a href="/index.html"><img src="img/logo.png" id="logo" alt="logo" /></a>
+            </figure>
+            <h1 class="mt-4">Hôtel Chambord <span class="font-italic">Montmartre</span></h1>
+        </div>
+        <div id="qfc">
+            <div id="jeffrey" class="row align-items-center">
+                <img src="img/majordhomme.svg" style="height: 70px;" alt="jeffrey" class="col-5">       
+                <form action="#" id="search" class="cache col-7">
+                    <input type="search" name="cherche">
+                    <button type='submit' class="check"></button>
+                </form>
+            </div>
+            <a href="/contact.html">
+                <figure id="jarvis">
+                <img src="img/contact.svg" style="height: 70px;" alt="jarvis">
+                <figcaption>Contactez-nous</figcaption>
+                </figure>
+            </a>
+            <div id="panier" class="mr-4">
+                <a href="/panier.html"><img src="img/panier.svg" style="width:50px;" alt="panier"></a>
+            </div>
+            <div id="flag" class="mr-2">
+                <img src="img/france.png" style="width:30px;" alt="france" id="fr" onmouseover="this.style.cursor='pointer'">
+                <img src="img/gb.png" style="width:30px;" alt="gb" id="en" onmouseover="this.style.cursor='pointer'">
+            </div>
+
+
+        </div>
+    </header>
+    <div class="container-fluid">
+        <main class="row">
+            <!-- Début du menu de navigation -->
+            <aside class="col-12 col-sm-4 col-lg-2" id="mainNav">
+                <nav class="navbar .stickyHeader">
+                    <div id="menuHome" >
+                        <ul class="navbar-nav">
+                            <li>
+                                <figure id="menuHomeElt">
+                                <img src="/img/accueil.svg" alt="accueil">
+                                </figure>
+                            </li>
+                            <li>
+                                <span id="spanMenu">Menu</span>
+                            </li>        
+                        </ul>
+                        <!-- bouton de partage -->
+                    <div class="box">
+                        <input type="checkbox" id="checkbox" />
+                        <div class="menu">
+                            <a href="#">
+                                <div class="menuItems">
+                                    <i class="fab fa-whatsapp"></i>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="menuItems">
+                                    <i class="fab fa-instagram"></i>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="menuItems">
+                                    <i class="fab fa-facebook"></i>
+                                </div>
+                            </a>
+                            <a href="#">
+                                <div class="menuItems">
+                                    <i class="fab fa-twitter"></i>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <!-- fin bouton partage -->
+                    </div>
+                    <div id="menuPrincipal" class="container-fluid mt-5">
+                        <ul class="navbar-nav justify-content-center">
+                            <li class="nav-item">
+                                <a href="/index.html" id="menuAcceuil" class="nav-link active cachem text-left">Accueil</a>                           
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuChambre" class="nav-link active cachem text-left">Chambres</a>
+                                <div class="container">
+                                    <ul id="menuChambreElt" class="navbar-nav cache">
+                                        <li class="nav-item"><a href="/chambres.html#classique"
+                                                class="nav-link sousMenu">Classique</a></li>
+                                        <li class="nav-item"><a href="/chambres.html#confort"
+                                                class="nav-link sousMenu">Confort</a></li>
+                                        <li class="nav-item"><a href="/chambres.html#luxe" class="nav-link sousMenu">Luxe</a>
+                                        </li>
+                                        <li class="nav-item"><a href="/chambre.html#suite" class="nav-link sousMenu">Suite</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuRestaurant" class="nav-link cachem">Restaurant</a>
+                                <div class="container">
+                                    <ul id="menuRestaurantElt" class="navbar-nav cache sousMenu">
+                                        <li class="nav-item"><a href="/restaurant.html" class="nav-link sousMenu">Bar</a></li>
+                                        <li class="nav-item"><a href="/restaurant.html#brasserie"
+                                                class="nav-link sousMenu">Brasserie</a></li>
+                                        <li class="nav-item"><a href="/restaurant.html#degustation"
+                                                class="nav-link sousMenu">Dégustation</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuSpa" class="nav-link cachem justify-content-center">Spa</a>
+                                <div class="container">
+                                    <ul id="menuSpaElt" class="navbar-nav cache">
+                                        <li class="nav-item"><a href="/spa.html#decouverte" class="nav-link sousMenu">Soin
+                                                Découverte</a></li>
+                                        <li class="nav-item"><a href="/spa.html#detente" class="nav-link sousMenu">Soin
+                                                Détente</a></li>
+                                        <li class="nav-item"><a href="/spa.html#relaxant" class="nav-link sousMenu">Soin
+                                                Relaxant</a></li>
+                                        <li class="nav-item"><a href="/spa.html#plaisir" class="nav-link sousMenu">Soin
+                                                Plaisir</a></li>
+                                        <li class="nav-item"><a href="/spa.html#evasion" class="nav-link sousMenu">Soin
+                                                Evasion</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuHotel" class="nav-link cachem justify-content-center">L'hôtel</a>
+                                <div class="container">
+                                    <ul id="menuHotelElt" class="navbar-nav cache .sousMenu">
+                                        <li class="nav-item"><a href="/hotel.html#apropos" class="nav-link sousMenu">a Propos</a>
+                                        </li>
+                                        <li class="nav-item"><a href="/hotel.html#acces" class="nav-link sousMenu">acces</a></li>
+                                        <li class="nav-item"><a href="/hotel.html#evenements"
+                                                class="nav-link sousMenu">evenements</a></li>
+                                        <li class="nav-item"><a href="/hotel.html#presse" class="nav-link sousMenu">presse</a>
+                                        </li>
+                                        <li class="nav-item"><a href="/hotel.html#actualites"
+                                                class="nav-link sousMenu">actualites</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+            <!-- Fin Menu de Navigation -->
+
+
+            <!-- Debut du contenu principal -->
+            <section class="col-12 col-sm-8 col-lg-10 justify-content-center text-center" id="mainContent">
+                
+                    
+                    <!-- bouton reserver -->
+                    <div class="m-5">
+                        <a href="/reservation.html" style="padding: 8px 13px; font-family: 'Roboto Slab', sans-serif; font-size: 21px; font-weight: normal; text-decoration: none; text-align: center; display: table-cell; vertical-align: middle; border-radius: 25px; color: rgb(255, 255, 255); background-color: rgb(95, 34, 49);">Réserver</a>
+                    </div>
+                    <!-- fin bouton reserver -->                 
+                    <div class="row justify-content-center">
+                        <article class="col-12 col-lg-6 mt-5">
+                            <div class="card1">
+                                <div class="img"> <span></span><span></span><span></span><span></span></div>
+                                <div class="content">
+                                    <a href="/spa.html">
+                                        <h2>Votre Spa</h2>
+                                        <img src="/img/spa.jpg" alt="spa" style="width: 200px;" class="imgFixe">
+                                    </a>
+                                    <h4 class="h6">Venez découvrir ce que "Plaisir" veut réellement dire. Quinze
+                                        minutes, une heure, une demi journée, qu'importe, ici le temps n'extiste pas !
+                                    </h4>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-12 col-lg-6 mt-5">
+                            <div class="card2">
+                                <div class="img"> <span></span><span></span><span></span><span></span></div>
+                                <div class="content">
+                                    <a href="/hotel.html">
+                                        <h2>Votre Salon</h2>
+                                        <img src="/img/degustation.jpg" alt="spa" style="width: 200px;" class="imgFixe">
+                                    </a>
+                                    <h4 class="h6">Des fauteuils club et une vue imprenable sur une selection de vin
+                                        d'exeption, que demander de plus</h4>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-12 col-lg-6 mt-5">
+                            <div class="card3">
+                                <div class="img"> <span></span><span></span><span></span><span></span></div>
+                                <div class="content">
+                                    <a href="/chambres.html">
+                                        <h2>Votre Chambre</h2>
+                                        <img src="/img/degustation.jpg" alt="spa" style="width: 200px;" class="imgFixe">
+                                    </a>
+                                    <h4 class="h6">Qui voudrait dormir avec une vue comme celle-ci ?</h4>
+                                </div>
+                            </div>
+                        </article>
+                        <article class="col-12 col-lg-6 mt-5">
+                            <div class="card4">
+                                <div class="img"> <span></span><span></span><span></span><span></span></div>
+                                <div class="content">
+                                    <a href="">
+                                        <h2>Votre Restaurant</h2>
+                                        <img src="/img/resto.jpg" alt="spa" style="width: 200px;" class="imgFixe">
+                                    </a>
+                                    <h4 class="h6">Avec plus de 360 références de vins, notre restaurant "Le Chambord"
+                                        fait la différence, pour le plus grand plaisir de vos papilles. Faites appel à
+                                        notre sommelier et à nos serveurs expérimentés qui sauront vous conseiller avec
+                                        précision pour un mariage réussi entre plats et accompagnements.</h4>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                    <hr>
+                
+            </section>
+            
+            <!-- Fin du contenu principal -->
+        </main>
+    </div>
+    <hr>
+<!-- Début pied de page -->
+    <footer id="foot" class="container-fluid">
+        <!-- Récapitulatif -->
+        <div class="row">
+            <div id="footChambre" class="col-12 col-md-3 text-center">
+                <h6 class="text-center">Chambres</h6>
+                <a href="/chambres.html#classique">Classique</a><span> | </span>
+                <a href="/chambres.html#confort">Confort</a><span> | </span>
+                <a href="/chambres.html#luxe">Luxe</a><span> | </span>
+                <a href="/chambres.html#suite">Suites</a><span> | </span>
+            </div>
+            <div id="footRestaurant" class="col-12 col-md-3 text-center">
+                <h6 class="text-center">Restaurant</h6>
+                <a href="/restaurant.html#bar">Bar</a><span> | </span>
+                <a href="/restaurant.html#brasserie">Brasserie</a><span> | </span>
+                <a href="/restaurant.html#degustation">Dégustation</a><span> | </span>
+            </div>
+            <div id="footSpa" class="col-12 col-md-3 text-center">
+                <h6 class="text-center">Spa</h6>
+                <a href="/spa.html#detente">Soin Détente</a><span> | </span>
+                <a href="/spa.html#decouverte">Soin Découverte</a><span> | </span>
+                <a href="/spa.html#relaxant">Soin Relaxant</a><span> | </span>
+                <a href="/spa.html#plaisir">Soin Plaisir</a><span> | </span>
+                <a href="/spa.html#evasion">Soin Evasion</a><span> | </span>
+            </div>
+            <div id="footHotel" class="col-12 col-md-3 text-center">
+                <h6 class="text-center">Hôtel</h6>
+                <a href="/hotel.html#apropos">A Propos</a><span> | </span>
+                <a href="/hotel.html#acces">Acces</a><span> | </span>
+                <a href="/hotel.html#evenements">Evenements</a><span> | </span>
+                <a href="/hotel.html#presse">Presse</a><span> | </span>
+                <a href="/hotel.html#actualites">Actualités</a><span> | </span>
+            </div>
+        </div>
+        <!-- Fin Récapitulatif -->
+        <hr />
+        <!-- Début lien divers CVG...NewsLetter... -->
+        <div id="liensDivers" class="row">
+            <div id="recrutement" class="col-6 col-md text-center">
+                <a href="/recrutement.html">Recrutement</a>
+            </div>
+
+            <div class="col-6 col-md text-center">
+                <a href="/mention.html"> Mention Legales</a>
+            </div>
+
+            <div class="col-6 col-md text-center">
+                <a href="/cvg.html"> CGV </a>
+            </div>
+            <!-- Modal NewsLetter -->
+            <div class="col-6 col-md text-center">
+                <a href="#" data-toggle="modal" data-target="#staticBackdrop"> Inscription
+                    Newsletter </a>
+                <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1"
+                    aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="staticBackdropLabel">Inscription à notre Newsletter</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                                <form action="#">
+                                    <label for="emailId">Votre Email</label>
+                                    <input type="email" name="mail" id="emailId">
+                                    <button type="submit" class="btn btn-secondary">Inscription</button>
+                                </form>
+                            </div>
+                            <div class="modal-footer">
+                                <p>Vous pourrez vous déinscrire à tout moment</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Fin Modal NewsLetter -->
+            <div class="col-6 col-md text-center">
+                <a href="#" OnClick="javascript:window.print()"> Imprimer </a>
+            </div>
+
+            <div class="col-6 col-md text-center">
+                <a href="/planDuSite.html"> Plan du Site </a>
+            </div>
+        </div>
+        <!-- fin lien divers CVG...NewsLetter... -->
+    </footer>
+<!-- Fin pied de page -->
+   
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="/js/bootstrap.bundle.min.js"></script>
+    <script src="/js/jquery-ui.min.js"></script>
+    <script src="/js/script.js"></script>
+    <script src="https://kit.fontawesome.com/7941ba6713.js" crossorigin="anonymous"></script>
+    <script>
+        // -------------Modal Newletter sur page d'accueil à l'ouverture plus 10 secondes----------------//
+        $(function(){
+            setTimeout(function(){
+            $('#staticBackdrop').modal('show');
+            },10000);
+        });
+        </script>
+</body>
+
+</html>

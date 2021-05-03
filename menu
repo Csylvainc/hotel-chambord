@@ -1,0 +1,163 @@
+ <!-- bouton de partage -->
+    <div class="box">
+        <input type="checkbox" id="checkbox" />
+        <div class="menu">
+            <a href="#">
+                <div class="menuItems">
+                    <i class="fab fa-whatsapp"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="menuItems">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="menuItems">
+                    <i class="fab fa-facebook"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="menuItems">
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </a>
+        </div>
+
+        
+    </div>
+    <!-- fin bouton partage -->
+
+    <div id="qfc">
+        <!-- bouton reserver -->
+        <div id="reservation">
+            <a href="/reservation.html"
+                style="padding: 8px 13px; font-family: 'Roboto Slab', sans-serif; font-size: 21px; font-weight: normal; text-decoration: none; text-align: center; display: table-cell; vertical-align: middle; border-radius: 25px; color: rgb(255, 255, 255); background-color: rgb(95, 34, 49);">Réserver</a>
+        </div>
+        <!-- fin bouton reserver -->
+        <div id="panier" class="mr-4">
+            <a href="/panier.html"><img src="img/panier.svg" style="width:50px;" alt="panier"></a>
+        </div>
+        <div id="flag" class="mr-2">
+            <img src="img/france.png" style="width:30px;" alt="france" id="fr"
+                onmouseover="this.style.cursor='pointer'">
+            <img src="img/gb.png" style="width:30px;" alt="gb" id="en" onmouseover="this.style.cursor='pointer'">
+        </div>
+        
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Début du menu de navigation -->
+            <aside class="col-12 col-sm-4 col-lg-2" id="mainNav">
+                <nav class="navbar sticky-top">
+                    <figure class="nav-item">
+                        <a href="/index.html"><img src="img/logo.png" id="logo" alt="logo" /></a>
+                    </figure>              
+                    <div id="menuPrincipal" class="container-fluid mt-5">
+                        <ul class="navbar-nav justify-content-center">
+                            <li>
+                                <div id="menuHome">
+                                    <figure id="menuHomeElt">
+                                        <img src="/img/accueil.svg" alt="accueil">
+                                    </figure>
+                                    <span id="spanMenu">Menu</span>
+                                </div>                
+                            </li>
+                            <li class="nav-item">
+                                <a href="/index.html" id="menuAcceuil"
+                                    class="nav-link active cachem text-left">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuChambre" class="nav-link active cachem text-left">Chambres</a>
+                                <div class="container">
+                                    <ul id="menuChambreElt" class="navbar-nav cache">
+                                        <li class="nav-item"><a href="/chambres.html#classique"
+                                                class="nav-link sousMenu">Classique</a></li>
+                                        <li class="nav-item"><a href="/chambres.html#confort"
+                                                class="nav-link sousMenu">Confort</a></li>
+                                        <li class="nav-item"><a href="/chambres.html#luxe"
+                                                class="nav-link sousMenu">Luxe</a>
+                                        </li>
+                                        <li class="nav-item"><a href="/chambre.html#suite"
+                                                class="nav-link sousMenu">Suite</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuRestaurant" class="nav-link cachem">Restaurant</a>
+                                <div class="container">
+                                    <ul id="menuRestaurantElt" class="navbar-nav cache sousMenu">
+                                        <li class="nav-item"><a href="/restaurant.html"
+                                                class="nav-link sousMenu">Bar</a></li>
+                                        <li class="nav-item"><a href="/restaurant.html#brasserie"
+                                                class="nav-link sousMenu">Brasserie</a></li>
+                                        <li class="nav-item"><a href="/restaurant.html#degustation"
+                                                class="nav-link sousMenu">Dégustation</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuSpa" class="nav-link cachem justify-content-center">Spa</a>
+                                <div class="container">
+                                    <ul id="menuSpaElt" class="navbar-nav cache">
+                                        <li class="nav-item"><a href="/spa.html#decouverte"
+                                                class="nav-link sousMenu">Soin
+                                                Découverte</a></li>
+                                        <li class="nav-item"><a href="/spa.html#detente" class="nav-link sousMenu">Soin
+                                                Détente</a></li>
+                                        <li class="nav-item"><a href="/spa.html#relaxant" class="nav-link sousMenu">Soin
+                                                Relaxant</a></li>
+                                        <li class="nav-item"><a href="/spa.html#plaisir" class="nav-link sousMenu">Soin
+                                                Plaisir</a></li>
+                                        <li class="nav-item"><a href="/spa.html#evasion" class="nav-link sousMenu">Soin
+                                                Evasion</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuHotel" class="nav-link cachem">L'hôtel</a>
+                                <div class="container">
+                                    <ul id="menuHotelElt" class="navbar-nav cache .sousMenu">
+                                        <li class="nav-item"><a href="/hotel.html#apropos" class="nav-link sousMenu">a
+                                                Propos</a>
+                                        </li>
+                                        <li class="nav-item"><a href="/hotel.html#acces"
+                                                class="nav-link sousMenu">acces</a></li>
+                                        <li class="nav-item"><a href="/hotel.html#evenements"
+                                                class="nav-link sousMenu">evenements</a></li>
+                                        <li class="nav-item"><a href="/hotel.html#presse"
+                                                class="nav-link sousMenu">presse</a>
+                                        </li>
+                                        <li class="nav-item"><a href="/hotel.html#actualites"
+                                                class="nav-link sousMenu">actualites</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item text-center">
+                                <div class="cachem" id="jarvis">
+                                    <a href="/contact.html">
+                                        <figure >
+                                            <img src="img/contact.svg" style="height: 70px;" alt="jarvis">
+                                            <figcaption>Contactez-nous</figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+                                
+                            </li>
+                            <li class="nav-item text-center">
+                                <div id="jeffrey" class="align-items-center nav-item cachem">
+                                    <img src="img/majordhomme.svg" style="height: 50px;" alt="jeffrey">
+                                    <form action="#" id="search">
+                                        <input type="search" name="cherche">
+                                        <button type='submit' class="check"></button>
+                                    </form>
+                                </div>
+                            </li>
+                            
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+            <!-- Fin Menu de Navigation -->

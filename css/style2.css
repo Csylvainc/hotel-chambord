@@ -1,0 +1,107 @@
+/*---------Importation des polices----------*/
+@import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400&display=swap');
+
+
+/* Régle des couleurs */
+:root{
+    --fond: #2c2c2c;
+    --liens: #ca849b;
+    --lienshover:  #eae5e7;
+    --vin: #5f2231;
+    --logo: #b78fad;
+    --qfc: rgba(95, 34, 49, 0.8)
+}
+/* /////////////////////////////////////////////////////// */
+/*  Réglage Généraux */
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+body{
+    background-color: white;
+    color: var(--vin);
+}
+
+h1{
+    font-family: 'Niconne';
+}
+h2, h3, h4, h5, h6{
+    margin-top: 10px;
+    font-family: 'Roboto Slab';
+    font-weight: 400;
+}
+p{
+   font-family: 'Roboto Slab';
+   font-weight: 100;
+   padding: 15px;
+}
+article p{
+    color: #eae5e7;
+}
+.bgInfo{
+    background-color: var(--vin);
+    border-radius: 10px;
+}
+hr{
+    height: 3px;
+    background-color: var(--vin);
+    border: none;
+    width: 80%;
+}
+/* //////////////////////////////////////////////////////// */
+
+/* //////////////////////////////////////////////////////// */
+/* Aide utilisateur recherche contac panier langue */
+#qfc{
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    display: inline-flex;
+    z-index: 2;
+    background-color: var(--qfc);
+}
+#qfc a{
+  text-decoration: none;
+}
+#qfc a :hover{
+  color: var(--lienshover);
+  text-decoration: none;
+}
+/* ///////////////////////////////////////////////////////// */
+
+/* ///////////////////////////////////////////////////////// */
+/* Menu navigation */
+.cache{
+    display: none;
+}
+.cachem{
+    display: none;
+}
+div.sticky{
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+    left: 15px;
+}
+#mainNav a {
+    color: #2c2c2c;
+    font-family: 'Niconne';
+    font-size: 1.5rem;
+    text-transform: capitalize;
+} 
+#mainNav a:hover{
+    color: #5f2231;
+}
+.sousMenu{
+    color: #2c2c2c;
+    font-family: 'Niconne';
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+.sousMenu:hover{
+    color: #5f2231;
+}
+
+
+

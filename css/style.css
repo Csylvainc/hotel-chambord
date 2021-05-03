@@ -1,27 +1,415 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Arizonia&family=Parisienne&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Niconne&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;400&display=swap');
-/* card photo */
 
-.card {
+
+
+
+:root{
+    --fond: #2c2c2c;
+    --liens: #ca849b;
+    --lienshover:  #eae5e7;
+    --vin: #5f2231;
+    --logo: #b78fad;
+    --qfc: rgba(95, 34, 49, 0.8)
+}
+*{
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+body{
+    background-color:var(--fond);
+    color: var(--lienshover);
+}
+
+#logo{
+  margin-top: 15px;
+  margin-left: 15px;
+  max-height: 100px;
+  width: auto;
+  z-index: 2;
+}
+.navbar ul li{
+  margin: 0;
+}
+#qfc{
+    position: fixed;
+    top: 10px;
+    right: 15px;
+    display: inline-flex;
+    z-index: 2;
+    background-color: var(--qfc);
+}
+#qfc a{
+  text-decoration: none;
+}
+#qfc a :hover{
+  color: var(--lienshover);
+  text-decoration: none;
+}
+
+#mainNav{
+  background-color: var(--qfc);
+}
+#menuHomeElt figcaption, #jeffrey figcaption, #jarvis figcaption{
+    color: var(--liens);
+    font-family: 'Niconne';
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+hr{
+    height: 3px;
+    background-color: var(--vin);
+    border: none;
+    width: 80%;
+}
+#spanMenu{
+  font-family: 'Niconne';
+}
+h1{
+    font-family: 'Niconne';
+}
+
+h2, h3, h4, h5, h6{
+  margin-top: 10px;
+  font-family: 'Roboto Slab';
+  font-weight: 400;
+}
+p{
+  font-family: 'Roboto Slab';
+  font-weight: 100;
+  padding: 15px;
+}
+.bgInfo{
+  background-color: var(--vin);
+  border-radius: 10px;
+}
+
+#mainNav a{
+    color: var(--liens);
+    font-family: 'Niconne';
+    font-size: 1.5rem;
+    text-transform: capitalize;
+}
+#mainNav a:hover{
+    color: var(--lienshover);
+}
+.sousMenu{
+  color: var(--lienshover) !important;
+  font-size: 1.5rem !important;
+}
+.sousMenu:hover {
+  color: var(--liens) !important;
+  font-size: 1.5rem !important;
+}
+
+.container a{
+    font-size: 1.5rem;
+}
+
+#mainContent a{
+  text-decoration: none;
+  font-family: 'Niconne';
+  color: var(--liens);
+}
+#mainContent a:hover{
+  font-family: 'Niconne';
+  color: var(--lienshover);
+}
+#etoile{
+  color: goldenrod;
+}
+/* Page Spa */
+#massageSolo:hover ,#massageDuo:hover {opacity: 0.5;}
+
+.cache{
+    display: none;
+}
+.cachem{
+    display: none;
+}
+#foot a{
+    font-family: 'Roboto Slab', serif;
+    font-size: 1rem;
+    font-weight: 100;
+    color: var(--liens);
+    text-decoration: none;
+}
+#foot a:hover{
+    color: var(--lienshover);  
+}
+#foot h6{
+    font-family: 'Roboto Slab', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color:var(--lienshover);
+}
+#foot span{
+    color: var(--lienshover);
+}
+h3,h4,h5,h6{
+  font-family: 'Roboto Slab';
+}
+.check{
+    background: var(--vin);
+    height: 20px;
+    width: 20px;
+    background-image: url('/img/check.svg');
+}
+/*Chambres Classique */
+.roomClassic{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.roomClassic img {
+  width: 280px;
+  margin: 0 20px;
+  height: 100%;
+}
+
+/*Img Classic*/
+.flipCard {
+  background-color: transparent;
+  height: 100%;
+  perspective: 1000px;
+}
+.flipCardImg {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 var(--qfc);
+  
+}
+.flipCard:hover .flipCardImg {
+  transform: rotateY(180deg);
+}
+.infos{
+  box-shadow: 0 4px 8px 0 var(--qfc);
+}
+/* modal newsletter */
+.modal-content{
+  color: var(--lienshover);
+  background-color:var(--vin);
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+}
+
+
+
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+  .modal-content {
+    width: 100%;
+  }
+}
+
+/* fin modal spa */
+
+/* Bouton Partage reseau sociaux */
+  /*Style de la box  */
+  .box {
+    position: fixed;
+    bottom: 50px;
+    right: 10px;
+    display: flex;
+    z-index: 2;
+  }
+  
+  #checkbox {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    appearance: none;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    outline: none;
+    background: var(--lienshover);
+    position: relative;
+  }
+  #checkbox:hover {
+    background: var(--liens);
+  }
+  /* Fin Style de la box  */
+  
+  /* befor */
+  #checkbox::before {
+    content: '\f1e0';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'font awesome 5 free';
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--vin);
+    transition: all 1.5s;
+    }
+    #checkbox:checked::before {
+      content: '\f00d';
+    }
+    #checkbox:checked ~ .menu {
+      width: 205px; /* 4 * 65 + 4 * 1 pour la bordure */
+    }
+  /*Fin Befor  */
+
+  /* Style du Menu de partage */
+    .menu {
+      width: 0;
+      display: flex;
+      overflow: hidden;
+      transition: all .5s;
+    }
+    .menu .menuItems {
+      width: 50px;
+      height: 50px;
+      background: var(--lienshover);
+      border-left: 1px solid rgb(165, 165, 165);
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+    .menu .menuItems:hover {
+      background: var(--vin);
+    }
+  /* Fin Style du Menu de partage */
+
+  /* couleur de chaque icone */
+    .menu .menuItems i {
+      font-size: 1.8rem;
+    }
+    .fa-whatsapp {
+      color: #25d366;
+    }
+    .fa-instagram {
+      color: #c32aa3;
+    }
+    .fa-facebook {
+      color: #273c75;
+    }
+    .fa-twitter {
+      color: #1da1f2;
+    }
+/* Fin Bouton Partage reseau sociaux  */
+/*-------Chambres---------*/
+
+.bouton{
+  padding: 8px 13px; font-family: 'Roboto Slab', sans-serif; font-size: 21px; font-weight: normal; text-decoration: none; text-align: center; display: table-cell; vertical-align: middle; border-radius: 25px; color: rgb(255, 255, 255); background-color: rgb(95, 34, 49);
+}
+
+/*Chambres Classique */
+.roomClassic{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.roomClassic img {
+  width: 280px;
+  margin: 0 20px;
+  height: 100%;
+}
+
+/*Img Classic*/
+.flipCard {
+  background-color: transparent;
+  height: 100%;
+  perspective: 1000px;
+}
+.flipCardImg {
+  position: relative;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 var(--qfc);
+  
+}
+.flipCard:hover .flipCardImg {
+  transform: rotateY(180deg);
+}
+/* Fin Chambre */
+/*------------------------ Reservation----------------------------- */
+
+/* ----------------------fin reservation------------------------ */
+
+@media screen and (min-width:576px){
+    .cachem{
+        display: flex;
+    }
+    
+}
+
+ /* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+ 
+}
+
+/*  Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  #spanMenu{
+    display: none;
+  }
+ }
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { 
+  .container a{
+    font-size: 2rem;
+  }
+  #mainNav a{
+    font-size: 2.5rem;
+  }
+ }
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { 
+  .imgFixe{
+    display: none;
+  }
+  /* animation photo */
+  .card1 {
     border-radius: 16px;
-    width: 550px;
-    height: 367px;
+    width: 500px;
+    height: 300px;
     background: url(/img/spa.jpg);
     position: relative;
     overflow: hidden;
-    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.85);
+    box-shadow: 0 5px 50px #000000d9;
   }
-  .card:before {
+  .card1:before {
     content: "";
     position: absolute;
     width: 100%;
     height: 100%;
-    top: 0;
-    left: 0;
-    background-color: rgba(0, 0, 0, 0.5);
+    top: 0px;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.9);
   }
-  .card .img {
+  .card1 .img {
     position: absolute;
     top: 0;
     left: 0;
@@ -29,33 +417,33 @@
     height: 100%;
     display: flex;
   }
-  .card .img span {
+  .card1 .img span {
     width: 25%;
     height: 100%;
     background: url(/img/spa.jpg);
     transition: 0.5s;
   }
-  .card .img span:nth-child(1) {
+  .card1 .img span:nth-child(1) {
     background-position: 0;
-    transition-delay: 0;
+    
   }
-  .card .img span:nth-child(2) {
+  .card1 .img span:nth-child(2) {
     background-position: 33.33333%;
     transition-delay: 0.1s;
   }
-  .card .img span:nth-child(3) {
+  .card1 .img span:nth-child(3) {
     background-position: 66.66666%;
     transition-delay: 0.2s;
   }
-  .card .img span:nth-child(4) {
+  .card1 .img span:nth-child(4) {
     background-position: 100%;
     transition-delay: 0.3s;
   }
   
-  .card:hover .img > span {
+  .card1:hover .img > span {
     transform: translateY(-100%);
   }
-  .card:hover .content {
+  .card1:hover .content {
     transform: translateY(0%);
     transition: 1s;
     transition-delay: 0.1s;
@@ -78,9 +466,9 @@
 
 .card2 {
     border-radius: 16px;
-    width: 550px;
-    height: 367px;
-    background: url(/img/salonVinanim.jpg);
+    width: 500px;
+    height: 300px;
+    background: url(/img/degustation.jpg);
     position: relative;
     overflow: hidden;
     box-shadow: 0 5px 50px rgba(0, 0, 0, 0.85);
@@ -92,7 +480,7 @@
     height: 100%;
     top: 0;
     right: 0px;
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(0, 0, 0, 0.9);
   }
   .card2 .img {
     position: absolute;
@@ -105,12 +493,12 @@
   .card2 .img span {
     width: 25%;
     height: 100%;
-    background: url(/img/salonVinanim.jpg);
+    background: url(/img/degustation.jpg);
     transition: 0.5s;
   }
   .card2 .img span:nth-child(1) {
     background-position: 0;
-    transition-delay: 0;
+    
   }
   .card2 .img span:nth-child(2) {
     background-position: 33.33333%;
@@ -147,104 +535,151 @@
     height: 100%;
     transform: translateY(100%);
   }
-  /* fin card 2 */
-
-:root{
-    --fond: rgba(44,44,44);
-    --liens: #ca849b;
-    --lienshover:  #eae5e7;
-    --vin: rgba(95, 34, 49);
-    --logo: #b78fad;
-    --qfc: rgba(95, 34, 49, 0.4)
-}
-*{
-    box-sizing: border-box;
-    margin: 0 auto;
-}
-body{
-    background-color: var(--fond);
-    color: var(--lienshover);
-}
-header{
-    min-height: 150px;
-}
-#qfc{
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    display: inline-flex;
-    z-index: 200;
-    background-color: var(--qfc);
-}
-#logo{
-    width: auto;
-    z-index: 200;
-}
-#menuHomeElt figcaption, #jeffrey figcaption, #jarvis figcaption{
-    color: var(--liens);
-    font-family: 'Niconne';
-    text-transform: capitalize;
-    font-size: 1.5rem;
-}
-
-#fig{
-    color: var(--liens);
-    font-family: 'Niconne';
-    text-transform: capitalize;
-}
-hr{
-    height: 3px;
-    background-color: var(--vin);
-    border: none;
-    width: 80%;
-}
-h1{
-    font-family: 'Niconne';
+  /* fin card salon */
+  .card3 {
+    border-radius: 16px;
+    width: 500px;
+    height: 300px;
+    background: url(/img/chambreluxe.jpg);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.85);
+  }
+  .card3:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  .card3 .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  .card3 .img span {
+    width: 25%;
+    height: 100%;
+    background: url(/img/chambreluxe.jpg);
+    transition: 0.5s;
+  }
+  .card3 .img span:nth-child(1) {
+    background-position: 0;
     
-}
-a{
-    color: var(--liens);
-    font-family: 'Niconne';
-    font-size: 2.5rem;
-    text-transform: capitalize;
-}
-a:hover{
+  }
+  .card3 .img span:nth-child(2) {
+    background-position: 33.33333%;
+    transition-delay: 0.1s;
+  }
+  .card3 .img span:nth-child(3) {
+    background-position: 66.66666%;
+    transition-delay: 0.2s;
+  }
+  .card3 .img span:nth-child(4) {
+    background-position: 100%;
+    transition-delay: 0.3s;
+  }
+  
+  .card3:hover .img > span {
+    transform: translateY(-100%);
+  }
+  .card3:hover .content {
+    transform: translateY(0%);
+    transition: 1s;
+    transition-delay: 0.1s;
+  }
+  
+  .content {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Roboto Slab';
     color: var(--lienshover);
-}
-.container a{
-    font-size: 2rem;
-}
-.cache{
-    display: none;
-}
-.cachem{
-    display: none;
-}
-#foot a{
-    font-family: 'Roboto Slab', serif;
-    font-size: 1rem;
-    font-weight: 100;
-}
-#foot h6{
-    font-family: 'Roboto Slab', serif;
-    font-size: 1.5rem;
-    font-weight: 400;
-    color:var(--lienshover);
-}
-#foot span{
+    padding: 20px 20px;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+  }
+  /* fin card chambre */
+  .card4 {
+    border-radius: 16px;
+    width: 500px;
+    height: 300px;
+    background: url(/img/resto.jpg);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 5px 50px rgba(0, 0, 0, 0.85);
+  }
+  .card4:before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    right: 0px;
+    background-color: rgba(0, 0, 0, 0.9);
+  }
+  .card4 .img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+  }
+  .card4 .img span {
+    width: 25%;
+    height: 100%;
+    background: url(/img/resto.jpg);
+    transition: 0.5s;
+  }
+  .card4 .img span:nth-child(1) {
+    background-position: 0;
+    
+  }
+  .card4 .img span:nth-child(2) {
+    background-position: 33.33333%;
+    transition-delay: 0.1s;
+  }
+  .card4 .img span:nth-child(3) {
+    background-position: 66.66666%;
+    transition-delay: 0.2s;
+  }
+  .card4 .img span:nth-child(4) {
+    background-position: 100%;
+    transition-delay: 0.3s;
+  }
+  
+  .card4:hover .img > span {
+    transform: translateY(-100%);
+  }
+  .card4:hover .content {
+    transform: translateY(0%);
+    transition: 1s;
+    transition-delay: 0.1s;
+  }
+  
+  .content {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    font-family: 'Roboto Slab';
     color: var(--lienshover);
-}
+    padding: 20px 20px;
+    width: 100%;
+    height: 100%;
+    transform: translateY(100%);
+  }
+  /* fin card restaurant */
+ }
 
-.check{
-    background: var(--vin);
-    height: 20px;
-    width: 20px;
-    background-image: url('/img/check.svg');
-}
-
-@media screen and (min-width:576px){
-    .cachem{
-        display: flex;
-    }
-}
-
+ 

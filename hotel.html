@@ -6,183 +6,447 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/jquery-ui.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet" href="/css/style.css">
     <title>Hotel Chambord</title>
 </head>
 
 <body>
-    <header class="contenaire-fluid">
-        <div class="row">
-            <div class="col-4 col-md-4 d-flex justify-start mt-2">
-                <figure>
-                    <img src="IMG/logo.svg" id="logo" alt="logo" class="col-4" />
-                    <figcaption>
-                        <h1 class="col-8">Hôtel Chambord</h1>
-                    </figcaption>
-                </figure>
-            </div>
-            <div class="col-8 col-md-8 row align-items-center justify-content-end">
-                <figure id="jeffrey" class="col-12 col-md-8 text-right text-md-right">
-                    <img src="img/majordhomme.svg" height="70px" alt="jeffrey" >
-                    <figcaption> Jeffrey à votre service</figcaption>
-                    <form action="" id="search" class="cache">
-                        <input type="search" name="" id="">
-                        <button type='submit' class="check"></button>
-                    </form>
-                </figure>    
-                <figure id="jarvis" class="col-12 col-md-2 text-right text-md-center">
-                        <img src="img/contact.svg" height="70px" alt="jarvis" >
-                        <figcaption> Contactez-nous</figcaption>
-                </figure>
-                <div class="col-12col-md-2">
-                    <img src="IMG/france.png" width="30px" alt="france">
-                    <img src="IMG/gb.png" width="30px" alt="gb">
+    <!-- bouton de partage -->
+    <div class="box">
+        <input type="checkbox" id="checkbox" />
+        <div class="menu">
+            <a href="#">
+                <div class="menuItems">
+                    <i class="fab fa-whatsapp"></i>
                 </div>
-            </div>
+            </a>
+            <a href="#">
+                <div class="menuItems">
+                    <i class="fab fa-instagram"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="menuItems">
+                    <i class="fab fa-facebook"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div class="menuItems">
+                    <i class="fab fa-twitter"></i>
+                </div>
+            </a>
+        </div>
+
+
+    </div>
+    <!-- fin bouton partage -->
+
+    <div id="qfc">
+        <!-- bouton reserver -->
+        <div id="reservation">
+            <a href="/reservation.html"
+                style="padding: 8px 13px; font-family: 'Roboto Slab', sans-serif; font-size: 21px; font-weight: normal; text-decoration: none; text-align: center; display: table-cell; vertical-align: middle; border-radius: 25px; color: rgb(255, 255, 255); background-color: rgb(95, 34, 49);">Réserver</a>
+        </div>
+        <!-- fin bouton reserver -->
+        <div id="panier" class="mr-4">
+            <a href="/panier.html"><img src="img/panier.svg" style="width:50px;" alt="panier"></a>
+        </div>
+        <div id="flag" class="mr-2">
+            <img src="img/france.png" style="width:30px;" alt="france" id="fr"
+                onmouseover="this.style.cursor='pointer'">
+            <img src="img/gb.png" style="width:30px;" alt="gb" id="en" onmouseover="this.style.cursor='pointer'">
+        </div>
+
+    </div>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Début du menu de navigation -->
+            <aside class="col-12 col-sm-4 col-lg-2" id="mainNav">
+                <nav class="navbar sticky-top">
+                    <figure class="nav-item">
+                        <a href="/index.html"><img src="img/logo.png" id="logo" alt="logo" /></a>
+                    </figure>
+                    <div id="menuPrincipal" class="container-fluid mt-5">
+                        <ul class="navbar-nav justify-content-center">
+                            <li>
+                                <div id="menuHome">
+                                    <figure id="menuHomeElt">
+                                        <img src="/img/accueil.svg" alt="accueil">
+                                    </figure>
+                                    <span id="spanMenu">Menu</span>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="/index.html" id="menuAcceuil"
+                                    class="nav-link active cachem text-left">Accueil</a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuChambre" class="nav-link active cachem text-left">Chambres</a>
+                                <div class="container">
+                                    <ul id="menuChambreElt" class="navbar-nav cache">
+                                        <li class="nav-item"><a href="/chambres.html#classique"
+                                                class="nav-link sousMenu">Classique</a></li>
+                                        <li class="nav-item"><a href="/chambres.html#confort"
+                                                class="nav-link sousMenu">Confort</a></li>
+                                        <li class="nav-item"><a href="/chambres.html#luxe"
+                                                class="nav-link sousMenu">Luxe</a>
+                                        </li>
+                                        <li class="nav-item"><a href="/chambre.html#suite"
+                                                class="nav-link sousMenu">Suite</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuRestaurant" class="nav-link cachem">Restaurant</a>
+                                <div class="container">
+                                    <ul id="menuRestaurantElt" class="navbar-nav cache sousMenu">
+                                        <li class="nav-item"><a href="/restaurant.html"
+                                                class="nav-link sousMenu">Bar</a></li>
+                                        <li class="nav-item"><a href="/restaurant.html#brasserie"
+                                                class="nav-link sousMenu">Brasserie</a></li>
+                                        <li class="nav-item"><a href="/restaurant.html#degustation"
+                                                class="nav-link sousMenu">Dégustation</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuSpa" class="nav-link cachem justify-content-center">Spa</a>
+                                <div class="container">
+                                    <ul id="menuSpaElt" class="navbar-nav cache">
+                                        <li class="nav-item"><a href="/spa.html#decouverte"
+                                                class="nav-link sousMenu">Soin
+                                                Découverte</a></li>
+                                        <li class="nav-item"><a href="/spa.html#detente" class="nav-link sousMenu">Soin
+                                                Détente</a></li>
+                                        <li class="nav-item"><a href="/spa.html#relaxant" class="nav-link sousMenu">Soin
+                                                Relaxant</a></li>
+                                        <li class="nav-item"><a href="/spa.html#plaisir" class="nav-link sousMenu">Soin
+                                                Plaisir</a></li>
+                                        <li class="nav-item"><a href="/spa.html#evasion" class="nav-link sousMenu">Soin
+                                                Evasion</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a href="#" id="menuHotel" class="nav-link cachem">L'hôtel</a>
+                                <div class="container">
+                                    <ul id="menuHotelElt" class="navbar-nav cache .sousMenu">
+                                        <li class="nav-item"><a href="/hotel.html#apropos" class="nav-link sousMenu">a
+                                                Propos</a>
+                                        </li>
+                                        <li class="nav-item"><a href="/hotel.html#acces"
+                                                class="nav-link sousMenu">acces</a></li>
+                                        <li class="nav-item"><a href="/hotel.html#evenements"
+                                                class="nav-link sousMenu">evenements</a></li>
+                                        <li class="nav-item"><a href="/hotel.html#presse"
+                                                class="nav-link sousMenu">presse</a>
+                                        </li>
+                                        <li class="nav-item"><a href="/hotel.html#actualites"
+                                                class="nav-link sousMenu">actualites</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="nav-item text-center">
+                                <div class="cachem" id="jarvis">
+                                    <a href="/contact.html">
+                                        <figure>
+                                            <img src="img/contact.svg" style="height: 70px;" alt="jarvis">
+                                            <figcaption>Contactez-nous</figcaption>
+                                        </figure>
+                                    </a>
+                                </div>
+
+                            </li>
+                            <li class="nav-item text-center">
+                                <div id="jeffrey" class="align-items-center nav-item cachem">
+                                    <img src="img/majordhomme.svg" style="height: 50px;" alt="jeffrey">
+                                    <form action="#" id="search">
+                                        <input type="search" name="cherche">
+                                        <button type='submit' class="check"></button>
+                                    </form>
+                                </div>
+                            </li>
+
+                        </ul>
+                    </div>
+                </nav>
+            </aside>
+            <!-- Fin Menu de Navigation -->
+
+            <!-- Contenu Principal -->
+            <main class="col-12 col-sm-8 col-lg-10 mt-5 text-center">
+                
+                <h1 class="mb-4">Hôtel Chambord <span id="etoile"><sup>&#x2605;&#x2605;&#x2605;&#x2605;&#x2605;</sup></span></h1><div class="row">
+                    <div id="apropos" class="col-12 text-center mt-5 p-2">
+                        <!-- A propos -->
+                        <div class="w-75 bgInfo p-3">
+                            
+                            <p><em class="h3">L'hôtel Chambord</em> à ouvert ses portes le 1<sup>er</sup> Mai 2021, cette date à son
+                                importance. Dès que vous aurez pousser les portes , votre vie professionnelle
+                                disparait pour laisser place à la quiétude</p>
+                            <p>Notre établissement situer à deux pas des Champs Elysée vous offre une vue panoramique
+                                exceptionnelle sur Paris</p>
+                            <p> L'efficacité, le charme et l'accueil chaleureux de tout le personnel de l'hôtel feront de
+                                votre séjour un souvenir inoubliable...</p>
+                        </div>
+                        <!-- Fin A propos -->
+                        <!-- Evènement -->
+                        <div class="p-2 mt-5" id="evenements">
+                            <h2>Revivez nos derniers évènements en vidéo</h2>
+                        <div class="row mt-5">                       
+                            <div class="col-12 col-lg-4">
+                                <img id="massageDuo" src="/img/inauguration.jpg" alt="Massage Duo"
+                                    style="width:100%;max-width:300px" data-toggle="modal" data-target="#modalDuo">
+                            </div>
+                            
+                            <div class="col-12 col-lg-4">
+                                <img id="massageSolo" src="/img/resto.jpg" alt="Massage Duo"
+                                    style="width:100%;max-width:300px" data-toggle="modal" data-target="#modalSolo">
+                            </div>
+                        </div>
+                        <!-- Modal 1 -->
+                        <div class="modal fade" id="modalDuo" tabindex="-1" aria-labelledby="labelModalDuo"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Massage en duo</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div><iframe width="560" height="315" src="https://www.youtube.com/embed/Cd0HYVP82wQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal 2 -->
+                        <div class="modal fade" id="modalSolo" tabindex="-1" aria-labelledby="exampleModalLabel"
+                            aria-hidden="true">
+                            <div class="modal-dialog modal-xl">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <h5 class="modal-title" id="exampleModalLabel">Massage en solo</h5>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                            <span aria-hidden="true">&times;</span>
+                                        </button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <div><iframe width="560" height="315" src="https://www.youtube.com/embed/chRAB7nf5qA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">close</button>
     
-        </div>
-    </header>
-    <section class="row">
-        <aside class="col-12 col-md-2">
-            <nav class="navbar justify-content-center">
-                <div id="menuHome">
-                    <ul class="navbar-nav">
-                        <img src="/img/accueil.svg" alt="acceuil">
-                    </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+    
+                        </div>
+                        
+                        <!-- Fin Evenements -->
+                        <!-- Carroussel -->
+                        <div id="carouselExampleIndicators" class="carousel slide p-3 mt-5" data-ride="carousel">
+                            <ol class="carousel-indicators">
+                                <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                            </ol>
+                            <div class="carousel-inner">
+                                <div class="carousel-item active">
+                                    <img class="d-block " src="/img/montmartrerose.jpg" alt="First slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="/img/accueil.jpg" alt="Second slide">
+                                </div>
+                                <div class="carousel-item">
+                                    <img class="d-block " src="/img/cave.jpg" alt="Third slide">
+                                    <div class="carousel-caption d-none d-md-block">
+                                        <a href="/restaurant.html#bar">
+                                            <h5 class="h3">Notre Cave</h5>
+                                            <p class="h4">Le plus grand choix de vin de la capital</p>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                            <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button"
+                                data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                            </a>
+                            <a class="carousel-control-next" href="#carouselExampleIndicators" role="button"
+                                data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                            </a>
+                        </div>
+                        <!-- Fin caroussel -->
+                        <!-- Acces -->
+                    </div>
+                    <div id="acces" class="col-12 text-center mt-5 p-2">
+                        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=132BXD7c8l12mCLjMW2k8C7HgeHE_0PfB" width="1024" height="480"></iframe>
+                    </div>
+                    <!-- fin acces -->
+                    <!-- Début Presse -->
+                    <article id="press" class="col-12 text-center mt-5 ">
+                        <h3>La presse parle de nous ...</small></h3>
+                        <div class="row" id="artpresse">
+                            <div class="col-12 col-lg-3 bgInfo text-left mt-5">
+                                <figure class="mt-5">
+                                    <img src="/img/fogaro.png" style="width: 30px;" alt="figaro">
+                                    <figcaption>Le Figaro Voyage</figcaption>
+                                </figure>
+                                <q><em>10/04/2021<br>
+                                     Par Lea Samalou</em></q>
+                                    <h5><q>Une nuit magique dans un lieu enchanté</q></h5>
+                                    <p><q>C’est le plus jeunes palaces parisiens. Et sans aucun doute l’un des plus réussis. Après quatre années de travaux titanesques, le Chambord a ouvert ses portes en 2021 avec une ambition assumée : devenir le plus bel hôtel européen. Pour ce faire, la société Vio&Camp Hotel, qui gère l’établissement, a cogné fort en atteignant des summums dans l’idée qu’on peut se faire du luxe version cinq étoiles.</q></p>
+                           </div>
+                            <div class="col-12 col-lg-3 bgInfo text-left mt-5">
+                                <figure class="mt-5">
+                                    <img src="/img/lobs.png" style="width: 30px;" alt="figaro">
+                                    <figcaption>Le Figaro Voyage</figcaption>
+                                </figure>
+                                <q><em>09/04/2021<br>
+                                     Par David Japoudas</em></q>
+                                    <h5><q>Luxe, calme et volupté, tel est le crédo de l’hôtel Chambord.</q></h5>
+                                    <p><q>Il est de ces centenaires qui gardent toute leur splendeur. L’hôtel Chambord, bien caché derière le Sacré Cœur, brille par sa discrétion et son élégance. L’entrée déjà, puis l’ascenseur, tout en bois et verre, entouré de vitraux d’époque laissant pénétrer la lumière, vous donnent une idée certaine de la noblesse qui habite les lieux.</q></p>               
+                            </div>
+                            <div class="col-12 col-lg-3 bgInfo text-left mt-5">
+                                <figure class="mt-5">
+                                    <img src="/img/le-monde.jpg" style="width: 30px;" alt="figaro">
+                                    <figcaption>Le Figaro Voyage</figcaption>
+                                </figure>
+                                <q><em>05/04/2021<br>
+                                     Par Elise Loucette</em></q>
+                                    <h5><q>L'Hotel Chambord réussit un pari ô combien difficile : imposer brillamment une empreinte qui lui est propre.</q></h5>
+                                    <p><q>A quelques minutes du Sacré Cœur, l’hôtel du Collectionneur vous fait découvrir le faste des années trente dans le pur style art déco. A peine la porte franchie, on est ébahi par les matériaux nobles d’époque qui côtoient majestueusement des matières plus contemporaines pour une alliance réussie. En traversant le lobby, un jardin, magnifié par le paysagiste Olivier Ravioli, résonne comme un appel à la sérénité. Huit cents mètres carrés de verdure qui font de cet espace l’un des plus grands jardins d’hôtel de Paris.</q></p>
+                            </div>
+                        </div>
+                    </article>
+                    <article id="actualites">
+                        <h3>Les dernières actualitées du monde de l'hotèlerie</h3>
+                        
+                    </article>
                 </div>
-                <div id="menuPrincipal" class="container-fluid mt-5">
-                    <ul class="navbar-nav">
-                        <li class="nav-item">
-                            <a href="#" id="menuChambre" class="nav-link active">Chambres</a>
-                            <div class="container">
-                                <ul id="menuChambreElt" class="navbar-nav cache">
-                                    <li class="nav-item"><a href="#" class="nav-link">Confort</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Luxe</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Suite</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Classique</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" id="menuRestaurant" class="nav-link">Restaurant</a>
-                            <div class="container">
-                                <ul id="menuRestaurantElt" class="navbar-nav cache">
-                                    <li class="nav-item"><a href="#" class="nav-link">Bar</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Brasserie</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Dégustation</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" id="menuSpa" class="nav-link">Spa</a>
-                            <div class="container">
-                                <ul id="menuSpaElt" class="navbar-nav cache">
-                                    <li class="nav-item"><a href="#" class="nav-link">Soin Découverte</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Soin Détente</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Soin Relaxant</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Soin Plaisir</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">Soin Evasion</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="nav-item">
-                            <a href="#" id="menuHotel" class="nav-link">Nous</a>
-                            <div class="container">
-                                <ul id="menuHotelElt" class="navbar-nav cache">
-                                    <li class="nav-item"><a href="#" class="nav-link">aPropos</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">acces</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">evenements</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">presse</a></li>
-                                    <li class="nav-item"><a href="#" class="nav-link">actualites</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                    </ul>
+
+
+            </main>
+
+
+
+            <!-- Fin du contenu principal -->
+            </main>
+        </div>
+        <hr>
+        <!-- Début pied de page -->
+        <footer id="foot" class="container-fluid">
+            <!-- Récapitulatif -->
+            <div class="row">
+                <div id="footChambre" class="col-12 col-md-3 text-center">
+                    <h6 class="text-center">Chambres</h6>
+                    <a href="/chambres.html#classique">Classique</a><span> | </span>
+                    <a href="/chambres.html#confort">Confort</a><span> | </span>
+                    <a href="/chambres.html#luxe">Luxe</a><span> | </span>
+                    <a href="/chambres.html#suite">Suites</a><span> | </span>
                 </div>
-            </nav>
-        </aside>
-        <main class="col-12 col-md-10">
-            <section></section>
-        </main>
-    </section>
-    <hr>
-    <footer id="foot" class="container">
-        <div class="row">
-            <div id="footChambre" class="col-12 col-md-3 text-center">
-                <h6 class="text-center">Chambres</h6>
-                <a href="#">Classique</a><span> | </span>
-                <a href="#">Confort</a><span> | </span>
-                <a href="#">Luxe</a><span> | </span>
-                <a href="#">Suites</a><span> | </span>
+                <div id="footRestaurant" class="col-12 col-md-3 text-center">
+                    <h6 class="text-center">Restaurant</h6>
+                    <a href="/restaurant.html#bar">Bar</a><span> | </span>
+                    <a href="/restaurant.html#brasserie">Brasserie</a><span> | </span>
+                    <a href="/restaurant.html#degustation">Dégustation</a><span> | </span>
+                </div>
+                <div id="footSpa" class="col-12 col-md-3 text-center">
+                    <h6 class="text-center">Spa</h6>
+                    <a href="/spa.html#detente">Soin Détente</a><span> | </span>
+                    <a href="/spa.html#decouverte">Soin Découverte</a><span> | </span>
+                    <a href="/spa.html#relaxant">Soin Relaxant</a><span> | </span>
+                    <a href="/spa.html#plaisir">Soin Plaisir</a><span> | </span>
+                    <a href="/spa.html#evasion">Soin Evasion</a><span> | </span>
+                </div>
+                <div id="footHotel" class="col-12 col-md-3 text-center">
+                    <h6 class="text-center">Hôtel</h6>
+                    <a href="/hotel.html#apropos">A Propos</a><span> | </span>
+                    <a href="/hotel.html#acces">Acces</a><span> | </span>
+                    <a href="/hotel.html#evenements">Evenements</a><span> | </span>
+                    <a href="/hotel.html#presse">Presse</a><span> | </span>
+                    <a href="/hotel.html#actualites">Actualités</a><span> | </span>
+                </div>
             </div>
+            <!-- Fin Récapitulatif -->
+            <hr />
+            <!-- Début lien divers CVG...NewsLetter... -->
+            <div id="liensDivers" class="row mb-5">
+                <div id="recrutement" class="col-6 col-md text-center">
+                    <a href="/recrutement.html">Recrutement</a>
+                </div>
 
-            <div id="footRestaurant" class="col-12 col-md-3 text-center">
-                <h6 class="text-center">Restaurant</h6>
-                <a href="#">Bar</a><span> | </span>
-                <a href="#">Brasserie</a><span> | </span>
-                <a href="#">Dégustation</a><span> | </span>
+                <div class="col-6 col-md text-center">
+                    <a href="/mention.html"> Mention Legales</a>
+                </div>
 
+                <div class="col-6 col-md text-center">
+                    <a href="/cvg.html"> CGV </a>
+                </div>
+                <!-- Modal NewsLetter -->
+                <div class="col-6 col-md text-center">
+                    <a href="#" data-toggle="modal" data-target="#staticBackdrop"> Inscription
+                        Newsletter </a>
+                    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false"
+                        tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="staticBackdropLabel">Inscription à notre Newsletter</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+                                </div>
+                                <div class="modal-body">
+                                    <form action="#">
+                                        <label for="emailId">Votre Email</label>
+                                        <input type="email" name="mail" id="emailId">
+                                        <button type="submit" class="btn btn-secondary">Inscription</button>
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <p>Vous pourrez vous déinscrire à tout moment</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Fin Modal NewsLetter -->
+                <div class="col-6 col-md text-center">
+                    <a href="#" OnClick="javascript:window.print()"> Imprimer </a>
+                </div>
+
+                <div class="col-6 col-md text-center">
+                    <a href="/planDuSite.html"> Plan du Site </a>
+                </div>
             </div>
-            <div id="footSpa" class="col-12 col-md-3 text-center">
-                <h6 class="text-center">Spa</h6>
-                <a href="#">Soin Détente</a><span> | </span>
-                <a href="#">Soin Relaxant</a><span> | </span>
-                <a href="#">Soin Plaisir</a><span> | </span>
-                <a href="#">Soin Evasion</a><span> | </span>
-
-            </div>
-            <div id="footHotel" class="col-12 col-md-3 text-center">
-                <h6 class="text-center">Hôtel</h6>
-                <a href="#">A Propos</a><span> | </span>
-                <a href="#">Acces</a><span> | </span>
-                <a href="#">Evenements</a><span> | </span>
-                <a href="#">Presse</a><span> | </span>
-                <a href="#">Actualités</a><span> | </span>
-
-            </div>
-        </div>
-
-
-        <hr />
-        <div id="liensDivers" class="row">
-            <div id="recrutement" class="col-6 col-md text-center">
-                <a href="#">Recrutement</a>
-            </div>
-
-            <div class="col-6 col-md text-center">
-                <a href="#"> Mention Legales</a>
-            </div>
-
-            <div class="col-6 col-md text-center">
-                <a href="#"> CGV </a>
-            </div>
-
-            <div class="col-6 col-md text-center">
-                <a href="#"> Newsletter </a>
-            </div>
-
-            <div class="col-6 col-md text-center">
-                <a href="#"> Imprimer </a>
-            </div>
-
-            <div class="col-6 col-md text-center">
-                <a href="#"> Plan du Site </a>
-            </div>
-
-        </div>
-
-    </footer>
+            <!-- fin lien divers CVG...NewsLetter... -->
+        </footer>
+        <!-- Fin pied de page -->
 
 
 
 
 
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="/js/bootstrap.bundle.min.js"></script>
-    <script src="/js/script.js"></script>
-    <script src="https://kit.fontawesome.com/7941ba6713.js" crossorigin="anonymous"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        <script src="/js/bootstrap.bundle.min.js"></script>
+        <script src="/js/jquery-ui.min.js"></script>
+        <script src="/js/script.js"></script>
+        <script src="https://kit.fontawesome.com/7941ba6713.js" crossorigin="anonymous"></script>
+
 </body>
 
 </html>

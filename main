@@ -1,0 +1,83 @@
+<!-- Debut du contenu principal -->
+
+            <!-- mon Formulaire -->
+            <div class="col-12 col-sm-8 col-lg-10">
+
+                <form action="#" id="monForm" style="width: 70%;">
+                    <h3>Informations Personnelles</h3>
+                    <hr>
+                    <div class="form-group form-row">
+                        <div class="col-12 col-lg-6">
+                            <label for="nomId">Nom</label>
+                            <input type="text" id="nomId" name="nom" class="form-control" placeholder="Nom" required>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <label for="prenomId">Prénom</label>
+                            <input type="text" id="prenomId" name="prenom" class="form-control" placeholder="prenom">
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div class="col-12 col-lg-8">
+                            <label for="emailId">Email</label>
+                            <input type="email" id="mailId" name="email" class="form-control" placeholder="Email"
+                                required>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <label for="telId">Téléphone</label>
+                            <input type="text" id="telId" name="tel" class="form-control" placeholder="Téléphone">
+                        </div>
+                    </div>
+                    <div class="form-group form-row">
+                        <div class="col-12 col-lg-12">
+                            <label for="emailId">Adresse</label>
+                            <input type="text" id="addId" name="adresse" class="form-control"
+                                placeholder="Votre adresse postal" required>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <label for="cpId">Code postal</label>
+                            <input type="text" id="cpId" name="cp" class="form-control" placeholder="Code postal"
+                                required>
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <label for="villeId">Ville</label>
+                            <input type="text" id="villelId" name="ville" class="form-control" placeholder="Ville">
+                        </div>
+                        <div class="col-12 col-lg-4">
+                            <label for="paysId">Pays</label>
+                            <input type="text" id="paysId" name="pays" class="form-control" placeholder="pays">
+                        </div>
+                    </div>
+                    <h3 class="mt-3">Informations sur le séjour</h3>
+                    <hr>
+                    <div class="form-group form-row">
+                        <div class="col-12 col-lg-6">
+                            <label for="datedebut">Arivée</label>
+                            <input type="text" id="datedebut" name="arrive" class="form-control"
+                                placeholder="01/01/2021" required>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <label for="datefin">Arivée</label>
+                            <input type="text" id="datefin" name="depart" class="form-control" placeholder="01/01/2021"
+                                required>
+                        </div>
+                        <div class="col-12 col-lg-6">
+                            <label for="chambreId">Chambre</label>
+                            <select name="chambre" id="chambreId" class="custom-select my-1 mr-lg-3" required>
+                                <option selcted>à vous de choisir</option>
+                                <option value="1">Classique ---------------- 150 €</option>
+                                <option value="2">Confort ------------------ 300 €</option>
+                                <option value="3">Deluxe ------------------- 600 €</option>
+                                <option value="4">Suite -------------------- 1200 €</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button type="submit" id="reserver"
+                        style="padding: 8px 13px; font-family: 'Roboto Slab', sans-serif; font-size: 21px; font-weight: normal; text-decoration: none; text-align: center; display: table-cell; vertical-align: middle; border-radius: 25px; color: rgb(255, 255, 255); background-color: rgb(95, 34, 49);"
+                        class="btn btn-secondary">Reserver</button>
+
+
+                </form>
+            </div>
+
+
+            <!-- Fin du contenu principal -->
